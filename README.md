@@ -104,14 +104,27 @@ https://<your-ngrok-url>.ngrok-free.dev/webhook/tally
 
 ---
 
-## 📊 LangSmith Tracing Metric Demonstration
+## 📊 End-to-End Execution & Observability Proof
 
+### 1. LangSmith Observability & Tracing
 * **Model Used:** `models/gemini-2.5-flash`
-* **P50 Latency:** ~7.2s (Scraping + Structured Output Reasoning)
-* **Error Rate:** 0.0%
-* **Cost:** <$0.01 per end-to-end execution
+* **Latency:** ~7.2s - 8.6s P50 | 9.0s P99 (Scraping + Structured Output Reasoning)
+* **Reliability:** 100% Success Rate (0.0% Error Rate across test runs)
+* **Cost Efficiency:** <$0.01 per end-to-end execution
 
+![LangSmith Dashboard](asset/langsmith-dashboard.png)
+
+### 2. Automated CRM Population (Notion API)
+Inbound leads are automatically enriched with technical SEO gaps, content recommendations, and readiness scores:
+
+![Notion CRM Tracker](asset/notion-crm.png)
+
+### 3. Inbound Trigger (Tally) & Instant SDR Alert (Telegram)
+| Inbound Tally Form | Telegram Push Notification |
+| :---: | :---: |
+| ![Tally Form](asset/tally-form.png) | ![Telegram Alert](asset/telegram-alert.png) |
 ---
+
 
 ## 📜 License
 Distributed under the MIT License.
