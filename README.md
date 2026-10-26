@@ -10,20 +10,20 @@ The system utilizes an event-driven architecture designed to eliminate webhook t
 
 ```mermaid
 flowchart LR
-    A[Inbound Lead<br/>Tally Form] -->|HTTP POST| B[Ngrok Tunnel]
-    B -->|Encrypted Webhook| C[FastAPI Handler<br/>/webhook/tally]
+    A["Inbound Lead<br/>(Tally Form)"] -->|HTTP POST| B["Ngrok Tunnel"]
+    B -->|Encrypted Webhook| C["FastAPI Handler<br/>(/webhook/tally)"]
     C -->|Immediate 202 Accepted| A
-    C -.->|FastAPI BackgroundTasks| D[Worker Execution]
-    
-    subgraph Pipeline [Autonomous Pipeline Worker]
-        D --> E[BeautifulSoup4<br/>On-Page Scraper]
-        E --> F[LangChain Chain<br/>Gemini 2.5-Flash]
-        F -->|Tracing & Metrics| G[LangSmith Observability]
-        F --> H[Structured Output<br/>Pydantic Model]
+    C -. "FastAPI BackgroundTasks" .-> D["Worker Execution"]
+
+    subgraph Pipeline ["Autonomous Pipeline Worker"]
+        D --> E["BeautifulSoup4<br/>On-Page Scraper"]
+        E --> F["LangChain Chain<br/>(Gemini 2.5-Flash)"]
+        F -->|"Tracing and Metrics"| G["LangSmith Observability"]
+        F --> H["Structured Output<br/>(Pydantic Model)"]
     end
 
-    H -->|Database Record| I[(Notion Database CRM)]
-    H -->|Push Notification| J[Telegram Bot API]
+    H -->|Database Record| I[("Notion Database CRM")]
+    H -->|Push Notification| J["Telegram Bot API"]
 ```
 
 ---
