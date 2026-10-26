@@ -3,6 +3,7 @@
 An enterprise-grade, asynchronous AI engineering pipeline that captures inbound B2B prospects, executes on-page technical SEO scraping, analyzes content gaps using Gemini 2.5-Flash with structured outputs, writes records into a Notion CRM, and delivers instant sales alerts via Telegram.
 
 ---
+> 📺 **Live Video Walkthrough:** [Watch the 90-second end-to-end demo here](https://www.youtube.com/watch?v=zOJ4k8zgSn4)
 
 ## 🏗️ Architecture Overview
 
